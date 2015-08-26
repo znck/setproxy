@@ -9,6 +9,42 @@ import re
 import sys
 import argparse
 
+all_files = {
+    # Proxy files for Ubuntu.
+    'ubuntu': {
+        '/etc/environment': [
+            'http_proxy=":proxy.http:"',
+            'https_proxy=":proxy.https:"',
+            'ftp_proxy=":proxy.ftp:"',
+            'socks_proxy=":proxy.socks:"'
+        ],
+        '/etc/wgetrc': [
+            'http_proxy=":proxy.http:"',
+            'https_proxy=":proxy.https:"',
+            'ftp_proxy=":proxy.ftp:"',
+            'socks_proxy=":proxy.socks:"'
+        ],
+        '/etc/apt/apt.conf': [
+            'Acquire::http::proxy ":proxy.http:"',
+            'Acquire::https::proxy ":proxy.https:"',
+            'Acquire::ftp::proxy ":proxy.ftp:"',
+            'Acquire::socks::proxy ":proxy.socks:"'
+        ],
+        '/etc/bash.bashrc': [
+            'export http_proxy=":proxy.http:"',
+            'export https_proxy=":proxy.https:"',
+            'export ftp_proxy=":proxy.ftp:"',
+            'export socks_proxy=":proxy.socks:"'
+        ],
+        '~/.bashrc': [
+            'export http_proxy=":proxy.http:"',
+            'export https_proxy=":proxy.https:"',
+            'export ftp_proxy=":proxy.ftp:"',
+            'export socks_proxy=":proxy.socks:"'
+        ]
+    }
+}
+
 SUPPRESS = '==SUPPRESS=='
 
 
@@ -127,31 +163,6 @@ class Proxy(object):
 def get_files():
     if os.getuid() != 0:
         die("Error: run it with sudo")
-    all_files = {
-        'ubuntu': {
-            '/etc/environment': ['http_proxy=":proxy.http:"',
-                                 'https_proxy=":proxy.https:"',
-                                 'ftp_proxy=":proxy.ftp:"',
-                                 'socks_proxy=":proxy.socks:"'],
-            '/etc/wgetrc': ['http_proxy=":proxy.http:"',
-                            'https_proxy=":proxy.https:"',
-                            'ftp_proxy=":proxy.ftp:"',
-                            'socks_proxy=":proxy.socks:"'],
-            '/etc/apt/apt.conf': ['Acquire::http::proxy ":proxy.http:"',
-                                  'Acquire::https::proxy ":proxy.https:"',
-                                  'Acquire::ftp::proxy ":proxy.ftp:"',
-                                  'Acquire::socks::proxy ":proxy.socks:"'],
-            '/etc/bash.bashrc': ['export http_proxy=":proxy.http:"',
-                                 'export https_proxy=":proxy.https:"',
-                                 'export ftp_proxy=":proxy.ftp:"',
-                                 'export socks_proxy=":proxy.socks:"'],
-            '~/.bashrc': [
-                'export http_proxy=:proxy.http:',
-                'export https_proxy=:proxy.https:',
-                'export ftp_proxy=:proxy.ftp',
-                'export socks_proxy=:proxy.socks:']
-        }
-    }
     dist = platform.linux_distribution()
     files = None
     if len(dist[0]):
