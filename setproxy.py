@@ -42,9 +42,41 @@ all_files = {
             'export ftp_proxy=":proxy.ftp:"',
             'export socks_proxy=":proxy.socks:"'
         ]
+    },
+
+    'linuxmint': {
+        '/etc/environment': [
+            'http_proxy=":proxy.http:"',
+            'https_proxy=":proxy.https:"',
+            'ftp_proxy=":proxy.ftp:"',
+            'socks_proxy=":proxy.socks:"'
+        ],
+        '/etc/wgetrc': [
+            'http_proxy=":proxy.http:"',
+            'https_proxy=":proxy.https:"',
+            'ftp_proxy=":proxy.ftp:"',
+            'socks_proxy=":proxy.socks:"'
+        ],
+        '/etc/apt/apt.conf': [
+            'Acquire::http::proxy ":proxy.http:";',
+            'Acquire::https::proxy ":proxy.https:";',
+            'Acquire::ftp::proxy ":proxy.ftp:";',
+            'Acquire::socks::proxy ":proxy.socks:";'
+        ],
+        '/etc/bash.bashrc': [
+            'export http_proxy=":proxy.http:"',
+            'export https_proxy=":proxy.https:"',
+            'export ftp_proxy=":proxy.ftp:"',
+            'export socks_proxy=":proxy.socks:"'
+        ],
+        '~/.bashrc': [
+            'export http_proxy=":proxy.http:"',
+            'export https_proxy=":proxy.https:"',
+            'export ftp_proxy=":proxy.ftp:"',
+            'export socks_proxy=":proxy.socks:"'
+        ]
     }
 }
-all_files['linuxmint'] = all_files['ubuntu']
 
 SUPPRESS = '==SUPPRESS=='
 
