@@ -25,10 +25,10 @@ all_files = {
             'socks_proxy=":proxy.socks:"'
         ],
         '/etc/apt/apt.conf': [
-            'Acquire::http::proxy ":proxy.http:"',
-            'Acquire::https::proxy ":proxy.https:"',
-            'Acquire::ftp::proxy ":proxy.ftp:"',
-            'Acquire::socks::proxy ":proxy.socks:"'
+            'Acquire::http::proxy ":proxy.http:";',
+            'Acquire::https::proxy ":proxy.https:";',
+            'Acquire::ftp::proxy ":proxy.ftp:";',
+            'Acquire::socks::proxy ":proxy.socks:";'
         ],
         '/etc/bash.bashrc': [
             'export http_proxy=":proxy.http:"',
