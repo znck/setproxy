@@ -44,6 +44,7 @@ all_files = {
         ]
     }
 }
+all_files['linuxmint'] = all_files['ubuntu']
 
 SUPPRESS = '==SUPPRESS=='
 
