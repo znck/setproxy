@@ -7,6 +7,8 @@ Proxy settings with no pain
 Run this in your terminal to get the latest SetProxy version:
 ```bash
 curl -sS https://raw.githubusercontent.com/znck/setproxy/master/install.sh | sudo -E bash
+or
+wget https://raw.githubusercontent.com/znck/setproxy/master/setproxy
 ```
 
 ## How to use?
