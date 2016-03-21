@@ -8,12 +8,12 @@ Painless proxy configuration.
   <a href="LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License" />
   </a>
-  <a href="https://github.com/znck/downloader/releases">
-    <img src="https://img.shields.io/github/release/downloader/plug.svg?style=flat-square" alt="Latest Version" />
+  <a href="https://github.com/znck/setproxy/releases">
+    <img src="https://img.shields.io/github/release/setproxy/plug.svg?style=flat-square" alt="Latest Version" />
   </a>
 
-  <a href="https://github.com/znck/downloader/issues">
-    <img src="https://img.shields.io/github/issues/znck/downloader.svg?style=flat-square" alt="Issues" />
+  <a href="https://github.com/znck/setproxy/issues">
+    <img src="https://img.shields.io/github/issues/znck/setproxy.svg?style=flat-square" alt="Issues" />
   </a>
 </p>
 
@@ -31,8 +31,37 @@ wget -O - -o /dev/null https://raw.githubusercontent.com/znck/setproxy/v0.0.1/in
 
 SetProxy command line interface.
 
-```bash
-setproxy -h
+```
+$ setproxy -h
+usage: setproxy [-h] [-u USER] [-p PASSWORD] [--http] [--https] [--ftp]
+                [--socks] [--no-http] [--no-https] [--no-ftp] [--no-socks]
+                [--clear] [-t] [-d]
+                server [port]
+
+Easy proxy configuration
+
+positional arguments:
+  server                Proxy server address. ex: 202.141.80.19 or
+                        tamdil.iitg.ernet.in
+  port                  Proxy port. commonly used ports are 3128, 8080 and
+                        1080.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -u USER, --user USER  Username for proxy authentication.
+  -p PASSWORD, --password PASSWORD
+                        Password for proxy authentication.
+  --http                Enable http proxy setting (Default: Enabled)
+  --https               Enable https proxy setting (Default: Enabled)
+  --ftp                 Enable ftp proxy setting
+  --socks               Enable socks proxy setting
+  --no-http             Disable http proxy setting
+  --no-https            Disable https proxy setting
+  --no-ftp              Disable ftp proxy setting (Default: Disabled)
+  --no-socks            Disable socks proxy setting (Default: Disabled)
+  --clear               Delete old proxy settings, while creating new.
+  -t, --test            Display old proxy settings
+  -d, --delete          Delete old proxy settings
 ```
 > TODO: Update usage docs.
 
