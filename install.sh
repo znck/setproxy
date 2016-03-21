@@ -7,18 +7,24 @@ fi
 
 if [ -f setproxy.py ]
 then
-	cp setproxy.py /usr/bin/setproxy
+	cp setproxy.py /usr/local/bin/setproxy
 else
     if type curl &>/dev/null
     then
-        echo "" &>/dev/null
+        curl -O https://raw.githubusercontent.com/znck/setproxy/v0.0.1/setproxy.py
     else
-        echo "Please install 'curl' to download setproxy."
-        # apt-get install curl
-        exit
+        wget https://raw.githubusercontent.com/znck/setproxy/v0.0.1/setproxy.py
     fi
-	curl -sS https://raw.githubusercontent.com/znck/setproxy/master/setproxy.py >> /usr/bin/setproxy
+    if [ -f setproxy.py ]
+    then
+      cp setproxy.py /usr/local/bin/setproxy
+    fi
 fi
-chmod +x /usr/bin/setproxy
+chmod +x /usr/local/bin/setproxy
 
-echo Installation complete. Use command: setproxy
+if [ -f /usr/local/bin/setproxy ]
+then
+  echo Installation complete. Use command: setproxy
+else
+  echo Installation failed.
+fi

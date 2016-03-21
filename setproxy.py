@@ -146,7 +146,6 @@ class Proxy(object):
 
         f = open(filename, 'a')
         print "Setting proxy in file: %s..." % filename
-        # f.write('# Proxy configurations -- created using setproxy (author: Rahul Kadyan, http://znck.me)\n')
         f.write("\n")
         for pattern in patterns:
             if self.enabled.http and pattern.find(http_proxy_pattern) >= 0:

@@ -1,20 +1,65 @@
-# SetProxy [![GitHub version](https://badge.fury.io/gh/znck%2Fsetproxy.svg)](http://badge.fury.io/gh/znck%2Fsetproxy)
-Proxy settings with no pain
+# SetProxy
 
+Painless proxy configuration.
 
-## How to install?
+![SetProxy](cover.png)
+
+<p align="center">
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License" />
+  </a>
+  <a href="https://github.com/znck/downloader/releases">
+    <img src="https://img.shields.io/github/release/downloader/plug.svg?style=flat-square" alt="Latest Version" />
+  </a>
+
+  <a href="https://github.com/znck/downloader/issues">
+    <img src="https://img.shields.io/github/issues/znck/downloader.svg?style=flat-square" alt="Issues" />
+  </a>
+</p>
+
+## Installation
 
 Run this in your terminal to get the latest SetProxy version:
 ```bash
-curl -sS https://raw.githubusercontent.com/znck/setproxy/master/install.sh | sudo -E bash
-or
-wget https://raw.githubusercontent.com/znck/setproxy/master/setproxy
+# Using curl.
+curl -sS https://raw.githubusercontent.com/znck/setproxy/v0.0.1/install.sh | sudo -E bash
+# Using wget.
+wget -O - -o /dev/null https://raw.githubusercontent.com/znck/setproxy/v0.0.1/install.sh | sudo -E bash
 ```
 
-## How to use?
+## Usage
 
 SetProxy command line interface.
 
 ```bash
 setproxy -h
 ```
+> TODO: Update usage docs.
+
+## Change log
+
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+
+## Testing
+
+> Accepting PR :p
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
+
+## Security
+
+If you discover any security related issues, please email :author_email instead of using the issue tracker.
+
+## Credits
+
+- [Rahul Kadyan][link-author]
+- [All Contributors][link-contributors]
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
+
+[link-author]: http://znck.me
+[link-contributors]: ../../contributors
